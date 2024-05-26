@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirect</title>
+  </head>
+  <body>
+    <script>
+      var urlParams = new URLSearchParams(window.location.search);
+      var code = urlParams.get("code");
+      if (code == null){
+        window.location.replace(
+          "https://marchmd03.github.io/notion-widget-web/redirects/fallback.html"
+        );
+      } else {
+        window.location.replace(
+          "notionwidget://oauth/callback?code=" + code
+        );
+      }
+    </script>
+  </body>
+</html>
